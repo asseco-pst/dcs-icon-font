@@ -4,8 +4,11 @@
   "description": "A font generator for generating both font and CSS for SVG files",
   "main": "app/index.js",
   "scripts": {
-    "build": "babel src -d app",
-    "watch": "watch \"npm run build\" src && node app/index.js"
+    "start": "node app/index.js",
+    "build": "SET NODE_ENV=dev&& npm start",
+    "build-prod": "SET NODE_ENV=prod && npm start",
+    "compile": "babel src -d app",
+    "watch": "watch \"npm run compile\" src"
   },
   "author": "Orêncio Gonçalves",
   "license": "ISC",
