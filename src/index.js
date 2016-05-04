@@ -1,7 +1,13 @@
+#! /usr/bin/env node
+
+import webfontsGenerator from 'webfonts-generator';
+import glob from 'glob';
+import minimist from 'minimist';
 import { webfontsOptions } from './config/wf-config';
 
-const webfontsGenerator = require('webfonts-generator');
-const glob = require("glob");
+const argv = minimist(process.argv);
+
+console.log(`Welcome, ${argv.greet}!`);
 
 (function() {
   glob("icons/*.svg", function (er, files) {
