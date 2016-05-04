@@ -1,32 +1,19 @@
-/**
- * [baseOpts description]
- * @type {Object}
- */
-const baseOpts = {
-  dest: 'build/',
-  fontName: 'dcsIconFont',
+import minimist from 'minimist';
+const argv = minimist(process.argv);
+
+const buildPath = argv.fontName || 'build';
+
+const webfontsOptions = {
+  dest: buildPath,
+  fontName: argv.fontName || 'dcsIconFont',
   templateOptions: {
-    classPrefix: 'dcs-icon-',
-    baseClass: 'dcs-icon'
+    classPrefix: argv.classPrefix || 'dcs-icon-',
+    baseClass: argv.baseClass || 'dcs-icon'
   },
+  html: argv.html || false,
+  htmlDest: `${buildPath}/preview.html`,
 };
-
-/**
- * [envOpts description]
- * @type {Object}
- */
-const envOpts = {
-  dev: {
-    html: true,
-    htmlDest: `${baseOpts.dest}/preview.html`,
-  },
-  prod: {
-
-  }
-};
-
-const webfontsOptions = Object.assign({}, baseOpts, envOpts[process.env.NODE_ENV]);
-
+console.log(webfontsOptions);
 export {
   webfontsOptions
 };
