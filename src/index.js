@@ -1,28 +1,28 @@
-var webfontsGenerator = require('webfonts-generator');
-var glob = require("glob")
+#! /usr/bin/env node
 
-// options is optional
-glob("icons/*.svg", function (er, files) {
-  if (!files.length) {
-    console.log("Should provide a valid list of svg icons!");
-    return;
-  }
-  generateDcsIconFont(files);
-});
+import webfontsGenerator from 'webfonts-generator';
+import glob from 'glob';
+import { webfontsOptions } from './config/wf-config';
+
+(function() {
+  glob("icons/*.svg", function (er, files) {
+    if (!files.length) {
+      console.log("Should provide a valid list of svg icons!");
+      return;
+    }
+    generateDcsIconFont(files);
+  });
+})();
+
 
 function generateDcsIconFont(files) {
-  var opts = {
-    files: files,
-    dest: 'build/',
-    fontName: 'dcsIconFont',
-    templateOptions: {
-      classPrefix: 'dcs-icon-',
-      baseClass: 'dcs-icon'
-    },
-  };
+  webfontsOptions.files = files;
 
-  webfontsGenerator(opts, function(error) {
-    if (error) console.log('Fail!', error)
-    else console.log('Done!')
+  webfontsGenerator(webfontsOptions, function(error) {
+    if (error)  {
+      console.log('Fail!', error);
+    } else {
+      console.log('Done!');
+    }
   });
 }
