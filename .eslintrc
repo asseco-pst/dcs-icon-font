@@ -1,0 +1,24 @@
+{
+  "extends": "airbnb/base",
+  "globals": {
+    "register": true,
+    "angular": true
+  },
+  "rules": {
+      "no-param-reassign": 0,
+      "no-console": 0,
+      "no-trailing-spaces": 0,
+      "no-use-before-define": 0,
+      "no-multi-spaces": 0,
+      "no-params-reassign": 0,
+      "func-names": 0,
+      "no-var": 0,
+      "no-unused-expressions": 0,
+      "spaced-comment": 0,
+      "max-len": 0,
+  },
+  "env": {
+    "jasmine": true,
+    "protractor": true
+  }
+}

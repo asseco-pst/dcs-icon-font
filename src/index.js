@@ -1,28 +1,14 @@
 #! /usr/bin/env node
 
-import webfontsGenerator from 'webfonts-generator';
-import glob from 'glob';
-import { webfontsOptions } from './config/wf-config';
+import * as config from './config/wf-config';
+import minimist from 'minimist';
+import * as builder from './builder';
 
-(function() {
-  glob("icons/*.svg", function (er, files) {
-    if (!files.length) {
-      console.log("Should provide a valid list of svg icons!");
-      return;
-    }
-    generateDcsIconFont(files);
-  });
-})();
+const argv = minimist(process.argv);
+const options = config.getConfig(argv);
 
-
-function generateDcsIconFont(files) {
-  webfontsOptions.files = files;
-
-  webfontsGenerator(webfontsOptions, function(error) {
-    if (error)  {
-      console.log('Fail!', error);
-    } else {
-      console.log('Done!');
-    }
-  });
-}
+builder.build(options).then((result) => {
+  console.log('is done', result);
+}).catch((err) => {
+  console.log('failed', err);
+});
