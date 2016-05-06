@@ -1,5 +1,4 @@
 
-
 <p align="center">
   <a href="http://www.exictos.com/">
     <img src="/uploads/dbedbb2131dc8eb09b2a5bf6027e0ae9/symbol-exictos.png" width="100" alt="Exictos"/>
@@ -54,6 +53,16 @@ Will produce the following in your web browser:
 ## API Reference
 
 These are all the flags that you can use with the *dcs-icon-font* generator:
+
+| Flag                    | Description
+| ----------------------- |:-------------
+| --help                  | Presents all the available arguments that the dcs-icon-font cli is ready to handle
+| --out [path]            | specifies where the generated code is stored into. Default will be the *"build"* directory
+| --icons [path]          | specifies the directory that contains the SVG icons for which you want to generate the font
+| --baseclass [string]    | specifies the base css class name (ex. *dcs-icon*)
+| --classprefix [string]  | specifies the css class prefix for all your icons (ex. *dcs-icon-circle*)
+| --fontname [string]     | the name for your brand new font
+| --html                  | Because it would be nice to have a preview of all the fonts and CSS generated, you can pass this flag and have a html file with a html preview
 
 
 ## Tests
