@@ -1,19 +1,23 @@
-import minimist from 'minimist';
-const argv = minimist(process.argv);
+function getConfig(customOpts = {}) {
+  const buildPath = customOpts.fontName || 'build';
 
-const buildPath = argv.fontName || 'build';
+  const webfontsOptions = {
+    dest: buildPath,
+    fontName: customOpts.fontName || 'dcsIconFont',
+    templateOptions: {
+      classPrefix: customOpts.classPrefix || 'dcs-icon-',
+      baseClass: customOpts.baseClass || 'dcs-icon',
+    },
+    html: customOpts.html || false,
+    htmlDest: `${buildPath}/preview.html`,
+  };
 
-const webfontsOptions = {
-  dest: buildPath,
-  fontName: argv.fontName || 'dcsIconFont',
-  templateOptions: {
-    classPrefix: argv.classPrefix || 'dcs-icon-',
-    baseClass: argv.baseClass || 'dcs-icon'
-  },
-  html: argv.html || false,
-  htmlDest: `${buildPath}/preview.html`,
-};
-console.log(webfontsOptions);
+  return {
+    customOpts,
+    webfontsOptions,
+  };
+}
+
 export {
-  webfontsOptions
+  getConfig,
 };
