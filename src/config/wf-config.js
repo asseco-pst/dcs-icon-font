@@ -1,6 +1,6 @@
 function getConfig(customOpts = {}) {
-  const buildPath = customOpts.fontName || 'build';
-
+  const buildPath = customOpts.out || 'build';
+  
   const webfontsOptions = {
     dest: buildPath,
     fontName: customOpts.fontName || 'dcsIconFont',

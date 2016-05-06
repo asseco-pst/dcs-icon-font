@@ -2,13 +2,14 @@
 import webfontsGenerator from 'webfonts-generator';
 import glob from 'glob';
 
-function build(config={}) {
+function build(config = {}) {
   return new Promise((resolve, reject) => {
-    const files = glob.sync('icons/*.svg');
+    const iconsPath = config.customOpts.icons || 'icons/*.svg';
 
     try {
+      const files = glob.sync(iconsPath);
       if (!files.length) {
-        throw new Error('Should provide a non empty file list');
+        throw new Error('Invalid file list');
       }
 
       if (config.customOpts && config.customOpts.help) {
