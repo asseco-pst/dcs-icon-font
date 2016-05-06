@@ -2,7 +2,7 @@
 import webfontsGenerator from 'webfonts-generator';
 import glob from 'glob';
 
-function build(config) {
+function build(config={}) {
   return new Promise((resolve, reject) => {
     const files = glob.sync('icons/*.svg');
 
@@ -11,7 +11,7 @@ function build(config) {
         throw new Error('Should provide a non empty file list');
       }
 
-      if (config.customOpts.help) {
+      if (config.customOpts && config.customOpts.help) {
         resolve(`
           These are all the available args
            -- fontName: things

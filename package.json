@@ -6,11 +6,11 @@
     "dcs-icon-font": "./app/index.js"
   },
   "scripts": {
-    "start": "node app/index.js --teste oi",
-    "build": "SET NODE_ENV=dev&& npm start",
-    "build-prod": "SET NODE_ENV=prod && npm start",
+    "start": "node app/index.js",
+    "build": "npm run compile && npm start",
     "compile": "babel src -d app",
-    "watch": "watch \"npm run compile\" src"
+    "watch": "watch \"npm run compile\" src",
+    "test": " jasmine spec/index-spec.js"
   },
   "author": "Orêncio Gonçalves orencio.goncalves@exictos.com",
   "license": "ISC",
