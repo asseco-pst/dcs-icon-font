@@ -1,4 +1,3 @@
-
 <p align="center">
   <a href="http://www.exictos.com/">
     <img src="/uploads/dbedbb2131dc8eb09b2a5bf6027e0ae9/symbol-exictos.png" width="100" alt="Exictos"/>
@@ -36,7 +35,7 @@ npm install -g
 When installing from NPM globally, you can simply run:
 
 ```
-dcs-icon-font --icons './my-svg-icons'
+dcs-icon-font --icons my-svg-icons
 ```
 
 (see the "src/config/wf-config.js") for more customization
