@@ -67,12 +67,8 @@ These are all the flags that you can use with the *dcs-icon-font* generator:
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
+If you wish to somes tests accross this generator, you can do it typing:
 
-## Contributors
-
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
-
-## License
-
-A short snippet describing the license (MIT, Apache, etc.)
+``` 
+npm run test
+``` 
