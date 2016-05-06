@@ -1,29 +1,54 @@
 ## Synopsis
 
-### dcs-incon font
+**dcs-incon-font**
 Is a font generator that enables you to generate fonts for SVG icons.
-So you be able to use vectorial icons as a text font and manipulate them very easily
 
-**example:**
+So you be able to use vectorial icons as a text font and manipulate them very easily.
 
+## Installation
+
+You can install it through NPM, simply run:
+
+```
+npm install dcs-icon-font -g
+```
+
+Or you can clone it and install all its dependencies:
+```
+git clone git@172.25.1.187:canais-n-presenciais/dcs-icon-font.git
+npm install
+```
+
+## Usage
+
+When installing from NPM globally, you can simply run:
+
+```
+dcs-icon-font --icons './my-svg-icons'
+```
+
+When cloning/downloading it, you can run:
+```
+npm run start
+```
+
+(see the "src/config/wf-config.js") for more customization
 
 ## Code Example
 
 ```
 <i class="dcs-icon dcs-icon-aeroplane4" style="color: #B33B3B; background-color: #F7FFE5; font-size: 30px;"/>
 ```
-will produce the following
-![dcs-icon-aeroplane4](/uploads/ff4a74f99614bdbc7042a52df25315eb/dcs-icon-aeroplane4.PNG)
+Will produce the following:
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+![dcs-icon-aeroplane4](/uploads/ff4a74f99614bdbc7042a52df25315eb/dcs-icon-aeroplane4.PNG)
 
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+This project aims to make all the icons management easier and provide all the SVG features in a really flexible way.
 
-## Installation
+With this, you can write nice and clean CSS and HTML without polluting your code with SVG codes or src *paths*
 
-Provide code examples and explanations of how to get the project.
 
 ## API Reference
 
