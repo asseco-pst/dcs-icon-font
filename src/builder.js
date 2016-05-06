@@ -25,19 +25,41 @@ function build(config = {}) {
 
       const options = Object.assign({}, config.webfontsOptions);
       options.files = files;
-      generateDcsIconFont(options);
-      resolve({ success: true });
+
+      generateDcsIconFont(options)
+        .then(() => resolve({ success: true }))
+        .catch((e) => reject(e));
     } catch (e) {
       reject(e);
     }
   });
 }
+//
+// function readIconsDir() {
+//   return new Promise( (resolve, reject) => {
+//     const files = glob(iconsPath, (files) => {
+//       resolve(files)
+//     });
+//   })
+// }
+// function b(files) {
+//
+// }
+//
+//
+// abc
+//   .then(a);
+//   .then(b);
 
 function generateDcsIconFont(webfontsOptions) {
-  return webfontsGenerator(webfontsOptions, (error, result) => {
-    if (error) throw error;
+  return new Promise((resolve, reject) => {
+    webfontsGenerator(webfontsOptions, (error, result) => {
+      if (error) {
+        reject(error);
+      }
 
-    return { success: true, result };
+      resolve({ success: true, result });
+    });
   });
 }
 
