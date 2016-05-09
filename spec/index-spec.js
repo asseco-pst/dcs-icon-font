@@ -1,3 +1,5 @@
+'use strict';
+
 const builder = require('../app/builder.js');
 const config = require('../app/config/wf-config.js');
 const fs = require('fs');
@@ -6,6 +8,7 @@ const rimraf = require('rimraf');
 describe('Builder', () => {
   beforeEach(() => {
     rimraf.sync('build');
+    jasmine.addMatchers({ toBeSuccessful });
   });
 
   describe('receiving the flag:', () => {
@@ -39,7 +42,7 @@ describe('Builder', () => {
             const files = fs.readdirSync('./build');
 
             expect(files.length).toBeGreaterThan(0);
-            expect(result).toEqual({ success: true });
+            expect(result).toBeSuccessful();
             done();
           });
       });
@@ -53,7 +56,7 @@ describe('Builder', () => {
           .then((result) => {
             fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
               expect(file).toContain(baseClass);
-              expect(result).toEqual({ success: true });
+              expect(result).toBeSuccessful();
               done();
             });
           });
@@ -68,7 +71,7 @@ describe('Builder', () => {
           .then((result) => {
             fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
               expect(file).toContain(classPrefix);
-              expect(result).toEqual({ success: true });
+              expect(result).toBeSuccessful();
               done();
             });
           });
@@ -83,7 +86,7 @@ describe('Builder', () => {
           .then((result) => {
             fs.readFile(`./build/${fontName}.css`, 'utf8', (err, file) => {
               expect(file).toContain(fontName);
-              expect(result).toEqual({ success: true });
+              expect(result).toBeSuccessful();
               done();
             });
           });
@@ -99,7 +102,7 @@ describe('Builder', () => {
           .then((result) => {
             fs.readdir(`./${outFolder}`, (err, files) => {
               expect(files.length).toBeGreaterThan(0);
-              expect(result).toEqual({ success: true });
+              expect(result).toBeSuccessful();
               done();
             });
           });
@@ -113,7 +116,7 @@ describe('Builder', () => {
           .then((result) => {
             fs.readFile('./build/preview.html', 'utf8', (err, file) => {
               expect(file).toBeDefined();
-              expect(result).toEqual({ success: true });
+              expect(result).toBeSuccessful();
               done();
             });
           });
@@ -121,3 +124,18 @@ describe('Builder', () => {
     });
   });
 });
+
+
+function toBeSuccessful() {
+  return {
+    compare: (res) => {
+      const successResponse = { success: true };
+      const result = { pass: JSON.stringify(res) === JSON.stringify(successResponse) };
+
+      if (!result.pass) {
+        result.message =  `Expected response to be ${JSON.stringify(successResponse)}`;
+      }
+      return result;
+    },
+  };
+}
