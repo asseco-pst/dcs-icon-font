@@ -30,7 +30,7 @@ describe('Builder', function() {
         });
     });
 
-    it('should generate the new font for the icons into the \'icons\' folder', (done) => {
+    it('should generate the new font for the SVG icons into the \'icons\' folder', (done) => {
       const options = config.getConfig();
       builder.build(options)
         .then((result) => {
@@ -45,11 +45,27 @@ describe('Builder', function() {
 
   describe('receiving the \'--baseclass\' flag', () => {
     it('should generate the CSS declaring the style for the \'baseclass\' provided', (done) => {
-      const options = config.getConfig({ baseclass: 'test-icon' });
+      const baseClass = 'test-icon';
+      const options = config.getConfig({ baseclass: baseClass });
       builder.build(options)
         .then((result) => {
           fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
-            expect(file).toContain('test-icon');
+            expect(file).toContain(baseClass);
+            expect(result).toEqual({ success: true });
+            done();
+          });
+        });
+    });
+  });
+
+  describe('receiving the \'--classPrefix\' flag', () => {
+    it('should generate the CSS declaring the style for the \'classPrefix\' provided', (done) => {
+      const classPrefix = 'test-icon-';
+      const options = config.getConfig({ classprefix: classPrefix });
+      builder.build(options)
+        .then((result) => {
+          fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
+            expect(file).toContain(classPrefix);
             expect(result).toEqual({ success: true });
             done();
           });
