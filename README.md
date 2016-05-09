@@ -64,7 +64,7 @@ These are all the flags that you can use with the *dcs-icon-font* generator:
 
 ## Tests
 
-If you wish to somes tests accross this generator, you can do it typing:
+If you wish to run some tests accross this generator, you can do it by typing:
 
 ``` 
 npm run test
