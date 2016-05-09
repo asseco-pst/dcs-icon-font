@@ -6,9 +6,7 @@
 <h1 align="center">
   Exictos - Distribution Channel Solutions
 </h1>
-## Synopsis
-
-**dcs-incon-font**
+## dcs-incon-font
 Is a font generator that enables you to generate fonts for SVG icons.
 
 So you be able to use vectorial icons as a text font and manipulate them very easily.
