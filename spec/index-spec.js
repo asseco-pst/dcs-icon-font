@@ -58,7 +58,7 @@ describe('Builder', function() {
     });
   });
 
-  describe('receiving the \'--classPrefix\' flag', () => {
+  describe('receiving the \'--classprefix\' flag', () => {
     it('should generate the CSS declaring the style for the \'classPrefix\' provided', (done) => {
       const classPrefix = 'test-icon-';
       const options = config.getConfig({ classprefix: classPrefix });
@@ -66,6 +66,36 @@ describe('Builder', function() {
         .then((result) => {
           fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
             expect(file).toContain(classPrefix);
+            expect(result).toEqual({ success: true });
+            done();
+          });
+        });
+    });
+  });
+
+  describe('receiving the \'--fontname\' flag', () => {
+    it('should generate the CSS declaring the style for the \'fontname\' provided', (done) => {
+      const fontName = 'testFontName';
+      const options = config.getConfig({ fontname: fontName });
+      builder.build(options)
+        .then((result) => {
+          fs.readFile(`./build/${fontName}.css`, 'utf8', (err, file) => {
+            expect(file).toContain(fontName);
+            expect(result).toEqual({ success: true });
+            done();
+          });
+        });
+    });
+  });
+
+  describe('receiving the \'--out\' flag', () => {
+    it('should store all the generated code into the \'out-test\' folder', (done) => {
+      const outFolder = 'out-test';
+      const options = config.getConfig({ out: outFolder });
+      builder.build(options)
+        .then((result) => {
+          fs.readdir(`./${outFolder}`, (err, files) => {
+            expect(files.length).toBeGreaterThan(0);
             expect(result).toEqual({ success: true });
             done();
           });
