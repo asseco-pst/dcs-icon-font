@@ -1,8 +1,13 @@
 const builder = require('../app/builder.js');
 const config = require('../app/config/wf-config.js');
 const fs = require('fs');
+const rimraf = require('rimraf');
 
 describe('Builder', () => {
+  beforeEach(() => {
+    rimraf.sync('build');
+  });
+
   describe('receiving the flag:', () => {
     describe('\'--help\'', () => {
       it('should present all the available cli arguments', (done) => {
@@ -54,7 +59,7 @@ describe('Builder', () => {
           });
       });
     });
-  
+
     describe('\'--classprefix\'', () => {
       it('should generate the CSS declaring the style for the \'classPrefix\' provided', (done) => {
         const classPrefix = 'test-icon-';
@@ -88,6 +93,7 @@ describe('Builder', () => {
     describe('\'--out\'', () => {
       it('should store all the generated code into the \'out-test\' folder', (done) => {
         const outFolder = 'out-test';
+        rimraf.sync(outFolder);
         const options = config.getConfig({ out: outFolder });
         builder.build(options)
           .then((result) => {

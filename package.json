@@ -17,6 +17,7 @@
   "dependencies": {
     "glob": "^7.0.3",
     "minimist": "^1.2.0",
+    "rimraf": "^2.5.2",
     "webfonts-generator": "^0.3.5"
   },
   "devDependencies": {
