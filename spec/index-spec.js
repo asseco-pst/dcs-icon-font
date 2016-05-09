@@ -11,10 +11,6 @@ describe('Builder', function() {
         .then((result) => {
           expect(result).toContain('These are all the available args');
           done();
-        })
-        .catch((error) => {
-          expect(error).not.toBeUndefined();
-          done();
         });
     });
   });
