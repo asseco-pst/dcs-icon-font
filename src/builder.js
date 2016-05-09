@@ -2,15 +2,22 @@
 import webfontsGenerator from 'webfonts-generator';
 import glob from 'glob';
 
-function build(config={}) {
+/**
+ * Responsible for the generation of the icon font
+ * @param  {Object} config - an object containing all the needed options for the webfont generator.
+ * @return {Object} a successful response or an error in case it occurs
+ */
+function build(config = {}) {
   return new Promise((resolve, reject) => {
-    const files = glob.sync('icons/*.svg');
+    const files = glob.sync('icons/*.svg'); // read all the SVG icons for the font generation
 
     try {
+      // validate if it's a non-empty file list
       if (!files.length) {
         throw new Error('Should provide a non empty file list');
       }
 
+      // it --help is one of the specified args, then present all the available help content
       if (config.customOpts && config.customOpts.help) {
         resolve(`
 These are all the available arguments:
@@ -34,6 +41,11 @@ These are all the available arguments:
   });
 }
 
+/**
+ * Responsible for triggering the generation of the font
+ * @param  {Object} webfontsOptions the options for the webfont generator
+ * @return {Object} a promise with the result of the generation
+ */
 function generateDcsIconFont(webfontsOptions) {
   return webfontsGenerator(webfontsOptions, (error, result) => {
     if (error) throw error;

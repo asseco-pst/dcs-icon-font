@@ -1,3 +1,9 @@
+/**
+ * Responsible for merging the default font configuration and the overrides
+ * specified by the user through the CLI args
+ * @param  {Object} customOpts the options specified by the user
+ * @return {Object} the resulting configuration for the webfont generator
+ */
 function getConfig(customOpts = {}) {
   const buildPath = customOpts.fontName || 'build';
 
