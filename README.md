@@ -36,7 +36,7 @@ When installing from NPM globally, you can simply run:
 dcs-icon-font --icons my-svg-icons
 ```
 
-(see the "src/config/wf-config.js") for more customization
+(see the "src/config/wf-config.js") for more customization.
 
 ## Code Example
 
