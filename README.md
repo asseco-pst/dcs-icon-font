@@ -19,13 +19,15 @@ So you can write nice and clean CSS and HTML without polluting your code with SV
 You can install it through NPM, simply run:
 
 ```
-npm install dcs-icon-font -g
+npm install dcs-icon-font
 ```
 
 Or you can clone it and install all its dependencies:
 ```
 git clone git@172.25.1.187:canais-n-presenciais/dcs-icon-font.git
-npm install -g
+cd dcs-icon-font
+npm install
+npm run build
 ```
 
 ## Usage
