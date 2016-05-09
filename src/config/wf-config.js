@@ -6,9 +6,12 @@
  */
 function getConfig(customOpts = {}) {
   const buildPath = customOpts.out || './build';
+  const fontName = customOpts.fontname || 'dcsIconFont';
   const webfontsOptions = {
-    dest: buildPath,
-    fontName: customOpts.fontname || 'dcsIconFont',
+    dest: `${buildPath}/${fontName}`,
+    cssDest: `${buildPath}/${fontName}.css`,
+    cssFontsUrl: fontName,
+    fontName,
     templateOptions: {
       classPrefix: customOpts.classprefix || 'dcs-icon-',
       baseClass: customOpts.baseclass || 'dcs-icon',
