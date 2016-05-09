@@ -54,11 +54,11 @@ These are all the flags that you can use with the *dcs-icon-font* generator:
 | Flag                    | Description
 | ----------------------- |:-------------
 | --help                  | Presents all the available arguments that the dcs-icon-font cli is ready to handle
-| --out [string]          | specifies where the generated code is stored into. Default *"./build"*
-| --icons [string]        | specifies the directory that contains the SVG icons for which you want to generate the font. Default *"./icons"*
-| --baseclass [string]    | specifies the base css class name. Default *"dcs-icon"*
-| --classprefix [string]  | specifies the css class prefix for all your icons. Default *"dcs-icon-"*
-| --fontname [string]     | the name for your brand new font. Default *"dcsIconFont"*
+| --out [string]          | Specifies where the generated code is stored into. Default *"./build"*
+| --icons [string]        | Specifies the directory that contains the SVG icons for which you want to generate the font. Default *"./icons"*
+| --baseclass [string]    | Specifies the base css class name. Default *"dcs-icon"*
+| --classprefix [string]  | Specifies the css class prefix for all your icons. Default *"dcs-icon-"*
+| --fontname [string]     | The name for your brand new font. Default *"dcsIconFont"*
 | --html                  | Because it would be nice to have a preview of all the fonts and CSS generated, you can pass this flag and have a html file with a html preview
 
 
