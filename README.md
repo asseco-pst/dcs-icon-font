@@ -9,7 +9,7 @@
 ## dcs-incon-font
 Is a font generator that enables you to generate fonts for SVG icons.
 
-So you be able to use vectorial icons as a text font and manipulate them very easily.
+So you'll be able to use vectorial icons as a text font and manipulate them very easily.
 
 It aims to make all the icons management easier and provide all the SVG features in a really flexible way.
 So you can write nice and clean CSS and HTML without polluting your code with SVG codes or *src* paths.
