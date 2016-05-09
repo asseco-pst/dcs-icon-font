@@ -2,15 +2,11 @@
 import webfontsGenerator from 'webfonts-generator';
 import glob from 'glob';
 
-function build(config={}) {
+function build(config = {}) {
   return new Promise((resolve, reject) => {
-    const files = glob.sync('icons/*.svg');
+    const iconsPath = config.customOpts.icons || 'icons/*.svg';
 
     try {
-      if (!files.length) {
-        throw new Error('Should provide a non empty file list');
-      }
-
       if (config.customOpts && config.customOpts.help) {
         resolve(`
 These are all the available arguments:
@@ -24,21 +20,48 @@ These are all the available arguments:
         return;
       }
 
+      const files = glob.sync(iconsPath);
+      if (!files.length) {
+        throw new Error('Invalid file list');
+      }
+      
       const options = Object.assign({}, config.webfontsOptions);
       options.files = files;
-      generateDcsIconFont(options);
-      resolve({ success: true });
+
+      generateDcsIconFont(options)
+        .then(() => resolve({ success: true }))
+        .catch((e) => reject(e));
     } catch (e) {
       reject(e);
     }
   });
 }
+//
+// function readIconsDir() {
+//   return new Promise( (resolve, reject) => {
+//     const files = glob(iconsPath, (files) => {
+//       resolve(files)
+//     });
+//   })
+// }
+// function b(files) {
+//
+// }
+//
+//
+// abc
+//   .then(a);
+//   .then(b);
 
 function generateDcsIconFont(webfontsOptions) {
-  return webfontsGenerator(webfontsOptions, (error, result) => {
-    if (error) throw error;
+  return new Promise((resolve, reject) => {
+    webfontsGenerator(webfontsOptions, (error, result) => {
+      if (error) {
+        reject(error);
+      }
 
-    return { success: true, result };
+      resolve({ success: true, result });
+    });
   });
 }
 
