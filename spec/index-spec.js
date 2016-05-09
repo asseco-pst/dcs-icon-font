@@ -102,4 +102,18 @@ describe('Builder', function() {
         });
     });
   });
+
+  describe('receiving the \'--html\' flag', () => {
+    it('should generate a html file named \'preview.html\' with a preview for all the icons into the generated font', (done) => {
+      const options = config.getConfig({ html: true });
+      builder.build(options)
+        .then((result) => {
+          fs.readFile('./build/preview.html', 'utf8', (err, file) => {
+            expect(file).toBeDefined();
+            expect(result).toEqual({ success: true });
+            done();
+          });
+        });
+    });
+  });
 });
