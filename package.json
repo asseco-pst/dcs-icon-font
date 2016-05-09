@@ -7,9 +7,8 @@
   },
   "scripts": {
     "start": "node app/index.js",
-    "build": "npm run compile && npm start",
-    "compile": "babel src -d app",
-    "watch": "watch \"npm run compile\" src",
+    "build": "babel src -d app",
+    "watch": "watch \"npm run build\" src",
     "test": " jasmine spec/index-spec.js"
   },
   "author": "Orêncio Gonçalves orencio.goncalves@exictos.com",
