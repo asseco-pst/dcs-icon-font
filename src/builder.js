@@ -7,11 +7,6 @@ function build(config = {}) {
     const iconsPath = config.customOpts.icons || 'icons/*.svg';
 
     try {
-      const files = glob.sync(iconsPath);
-      if (!files.length) {
-        throw new Error('Invalid file list');
-      }
-
       if (config.customOpts && config.customOpts.help) {
         resolve(`
           These are all the available args
@@ -23,6 +18,11 @@ function build(config = {}) {
         return;
       }
 
+      const files = glob.sync(iconsPath);
+      if (!files.length) {
+        throw new Error('Invalid file list');
+      }
+      
       const options = Object.assign({}, config.webfontsOptions);
       options.files = files;
 
