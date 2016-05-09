@@ -8,7 +8,7 @@ const argv = minimist(process.argv);
 const options = config.getConfig(argv);
 
 builder.build(options).then((result) => {
-  console.log('is done', result);
+  console.log(result);
 }).catch((err) => {
   console.log('failed', err);
 });

@@ -13,11 +13,13 @@ function build(config={}) {
 
       if (config.customOpts && config.customOpts.help) {
         resolve(`
-          These are all the available args
-           -- fontName: things
-           -- classPrefix: things
-           -- baseClass: things
-           -- html: things
+These are all the available arguments:
+ --out [String]: specifies where the generated code is stored into. Default "./build"
+ --icons [String]: specifies the directory that contains the SVG icons for which you want to generate the font. Default "./icons"
+ --baseclass [String]: specifies the base css class name. Default "dcs-icon"
+ --classprefix [String]: specifies the css class prefix for all your icons. Default "dcs-icon-"
+ --fontname [String]: the name for your brand new font. Default "dcsIconFont"
+ --html: enables the generation of a html file with a preview for all the icons in the generated font
           `);
         return;
       }
