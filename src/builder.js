@@ -9,15 +9,7 @@ import glob from 'glob';
  */
 function build(config = {}) {
   return new Promise((resolve, reject) => {
-    const files = glob.sync('icons/*.svg'); // read all the SVG icons for the font generation
-
     try {
-      // validate if it's a non-empty file list
-      if (!files.length) {
-        throw new Error('Should provide a non empty file list');
-      }
-
-      // it --help is one of the specified args, then present all the available help content
       if (config.customOpts && config.customOpts.help) {
         resolve(`
 These are all the available arguments:
@@ -31,10 +23,19 @@ These are all the available arguments:
         return;
       }
 
+      const iconsPath = config.customOpts.icons || 'icons/*.svg';
+      const files = glob.sync(iconsPath);
+
+      if (!files.length) {
+        throw new Error('Invalid file list');
+      }
+
       const options = Object.assign({}, config.webfontsOptions);
       options.files = files;
-      generateDcsIconFont(options);
-      resolve({ success: true });
+
+      generateDcsIconFont(options)
+        .then(() => resolve({ success: true }))
+        .catch((e) => reject(e));
     } catch (e) {
       reject(e);
     }
@@ -47,10 +48,14 @@ These are all the available arguments:
  * @return {Object} a promise with the result of the generation
  */
 function generateDcsIconFont(webfontsOptions) {
-  return webfontsGenerator(webfontsOptions, (error, result) => {
-    if (error) throw error;
+  return new Promise((resolve, reject) => {
+    webfontsGenerator(webfontsOptions, (error, result) => {
+      if (error) {
+        reject(error);
+      }
 
-    return { success: true, result };
+      resolve({ success: true, result });
+    });
   });
 }
 

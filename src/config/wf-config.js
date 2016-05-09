@@ -5,14 +5,13 @@
  * @return {Object} the resulting configuration for the webfont generator
  */
 function getConfig(customOpts = {}) {
-  const buildPath = customOpts.fontName || 'build';
-
+  const buildPath = customOpts.out || './build';
   const webfontsOptions = {
     dest: buildPath,
-    fontName: customOpts.fontName || 'dcsIconFont',
+    fontName: customOpts.fontname || 'dcsIconFont',
     templateOptions: {
-      classPrefix: customOpts.classPrefix || 'dcs-icon-',
-      baseClass: customOpts.baseClass || 'dcs-icon',
+      classPrefix: customOpts.classprefix || 'dcs-icon-',
+      baseClass: customOpts.baseclass || 'dcs-icon',
     },
     html: customOpts.html || false,
     htmlDest: `${buildPath}/preview.html`,
