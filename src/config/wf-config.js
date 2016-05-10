@@ -18,6 +18,7 @@ function getConfig(customOpts = {}) {
       classPrefix: customOpts.classprefix || 'dcs-icon-',
       baseClass: customOpts.baseclass || 'dcs-icon',
     },
+    types: ['svg', 'ttf', 'woff', 'eot'],
     html: customOpts.html || false,
     htmlDest: `${cssDest}/preview.html`,
   };
