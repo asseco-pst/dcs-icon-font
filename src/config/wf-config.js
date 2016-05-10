@@ -22,8 +22,6 @@ function getConfig(customOpts = {}) {
     htmlDest: `${cssDest}/preview.html`,
   };
 
-  console.log(webfontsOptions);
-
   return {
     customOpts,
     webfontsOptions,
