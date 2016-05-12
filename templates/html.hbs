@@ -9,57 +9,67 @@
 			font-family: sans-serif;
 			margin: 0;
 			padding: 10px 20px;
+      font-size: 16px;
 		}
 
-		.preview {
-			line-height: 2em;
-		}
-
-		.preview__icon {
-			display: inline-block;
-			width: 32px;
-			text-align: center;
-		}
-
-		.icon {
-			display: inline-block;
-			font-size: 16px;
-		}
+    div.table {
+      display: table;
+      width: 100%;
+    }
+    div.table .cell {
+      display: table-cell;;
+      vertical-align: middle;
+    }
 
 		{{{styles}}}
 	</style>
 </head>
 <body>
-	<h1>COISAS</h1>
-  <!-- Standard button -->
-<button type="button" class="btn btn-default">Default</button>
-
-<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
-<button type="button" class="btn btn-primary">Primary</button>
-
-<!-- Indicates a successful or positive action -->
-<button type="button" class="btn btn-success">Success</button>
-
-<!-- Contextual button for informational alert messages -->
-<button type="button" class="btn btn-info">Info</button>
-
-<!-- Indicates caution should be taken with this action -->
-<button type="button" class="btn btn-warning">Warning</button>
-
-<!-- Indicates a dangerous or potentially negative action -->
-<button type="button" class="btn btn-danger">Danger</button>
-
-<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
-<button type="button" class="btn btn-link">Link</button>
-
-	<h1>{{fontName}}</h1>
-	{{#each names}}
-	<div class="preview">
-		<span class="preview__icon">
-			<span class="{{../baseClass}} {{../classPrefix}}{{this}}"></span>
-		</span>
-		<span>{{this}}</span>
-	</div>
-	{{/each}}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">{{fontName}}</div>
+          <div class="panel-body">
+            <div class="row">
+              <form class="form-inline">
+                {{#each names}}
+                <div class="col-xs-12 col-sm-4 col-md-3">
+                  <div class="table">
+                    <div class="cell" style="width: 80px;">
+                      <i class="{{../baseClass}} {{../classPrefix}}{{this}}"></i>
+                    </div>
+                    <div class="cell">
+                      <code>{{this}}</code>
+                    </div>
+                  </div>
+                </div>
+                {{/each}}
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Helper classes</div>
+          <div class="panel-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-4 col-md-3">
+                  coisas
+                </div>
+                <div class="col-sm-4 col-md-3">
+                  coisas
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
