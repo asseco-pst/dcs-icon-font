@@ -7,17 +7,20 @@
 function getConfig(customOpts = {}) {
   const buildPath = customOpts.out || './build';
   const fontName = customOpts.fontname || 'dcsIconFont';
+  const cssDest = customOpts.cssDest || buildPath;
+
   const webfontsOptions = {
     dest: `${buildPath}/${fontName}`,
-    cssDest: `${buildPath}/${fontName}.css`,
-    cssFontsUrl: fontName,
+    cssDest: `${cssDest}/${fontName}.css`,
+    cssFontsUrl: customOpts.cssFontsUrl || fontName,
     fontName,
     templateOptions: {
       classPrefix: customOpts.classprefix || 'dcs-icon-',
       baseClass: customOpts.baseclass || 'dcs-icon',
     },
+    types: ['svg', 'ttf', 'woff', 'eot'],
     html: customOpts.html || false,
-    htmlDest: `${buildPath}/preview.html`,
+    htmlDest: `${cssDest}/preview.html`,
   };
 
   return {

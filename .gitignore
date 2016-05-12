@@ -2,4 +2,5 @@ node_modules
 app
 build
 out-test
-icons
+*icons*
+*-build
