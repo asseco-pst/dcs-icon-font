@@ -18,10 +18,19 @@ function getConfig(customOpts = {}) {
       classPrefix: customOpts.classprefix || 'dcs-icon-',
       baseClass: customOpts.baseclass || 'dcs-icon',
     },
+    cssTemplate: './templates/css.hbs',
+    htmlTemplate: './templates/html.hbs',
+    templates: {
+      css: './templates/css.hbs',
+      scss: './templates/scss.hbs',
+      html: './templates/html.hbs',
+    },
     types: ['svg', 'ttf', 'woff', 'eot'],
     html: customOpts.html || false,
     htmlDest: `${cssDest}/preview.html`,
   };
+
+  console.log('webfontsOptions ------------------- ', webfontsOptions);
 
   return {
     customOpts,
