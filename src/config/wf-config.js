@@ -24,8 +24,10 @@ function getConfig(customOpts = {}) {
   };
 
   if (customOpts.sass) {
-    webfontsOptions.cssTemplate = `${__dirname}/../../templates/scss/main.hbs`;
+    webfontsOptions.cssTemplate = `${__dirname}/../../templates/scss.hbs`;
     webfontsOptions.cssDest = `${cssDest}/_${fontName}.scss`;
+  } else {
+    webfontsOptions.cssTemplate = `${__dirname}/../../templates/css.hbs`;
   }
 
   return {
