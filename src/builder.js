@@ -30,6 +30,10 @@ These are all the available arguments:
         throw new Error('Invalid file list');
       }
 
+      if (config.customOpts.sass && config.customOpts.html) {
+        throw new Error('Is not possible to generate a HTML preview for SASS outputs');
+      }
+
       const options = Object.assign({}, config.webfontsOptions);
       options.files = files;
 
