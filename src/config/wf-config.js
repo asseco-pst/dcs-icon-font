@@ -30,8 +30,6 @@ function getConfig(customOpts = {}) {
     htmlDest: `${cssDest}/preview.html`,
   };
 
-  console.log('webfontsOptions ------------------- ', webfontsOptions);
-
   return {
     customOpts,
     webfontsOptions,
