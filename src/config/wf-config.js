@@ -11,18 +11,22 @@ function getConfig(customOpts = {}) {
 
   const webfontsOptions = {
     dest: `${buildPath}/${fontName}`,
-    cssDest: `${cssDest}/scss/_${fontName}.scss`,
+    cssDest: `${cssDest}/${fontName}.css`,
     cssFontsUrl: customOpts.cssFontsUrl || fontName,
     fontName,
     templateOptions: {
       classPrefix: customOpts.classprefix || 'dcs-icon-',
       baseClass: customOpts.baseclass || 'dcs-icon',
     },
-    cssTemplate: `${__dirname}/../../templates/scss/main.hbs`,
     types: ['svg', 'ttf', 'woff', 'eot'],
     html: customOpts.html || false,
     htmlDest: `${cssDest}/preview.html`,
   };
+
+  if (customOpts.sass) {
+    webfontsOptions.cssTemplate = `${__dirname}/../../templates/scss/main.hbs`;
+    webfontsOptions.cssDest = `${cssDest}/_${fontName}.scss`;
+  }
 
   return {
     customOpts,
