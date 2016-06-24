@@ -30,6 +30,10 @@ These are all the available arguments:
         throw new Error('Invalid file list');
       }
 
+      if (config.customOpts.sass && config.customOpts.html) {
+        throw new Error('Is not possible to generate a HTML preview for SASS outputs');
+      }
+
       const options = Object.assign({}, config.webfontsOptions);
       options.files = files;
 
@@ -53,6 +57,16 @@ function generateDcsIconFont(webfontsOptions) {
       if (error) {
         reject(error);
       }
+
+      // const urls = {
+      //   eot: `${webfontsOptions.fontName}.eot`,
+      //   woff: `${webfontsOptions.fontName}.woff`,
+      //   ttf: `${webfontsOptions.fontName}.ttf`,
+      //   svg: `${webfontsOptions.fontName}.svg`,
+      // };
+      //
+      // console.log(result);
+      // // console.log(result.generateCss(urls));
 
       resolve({ success: true, result });
     });

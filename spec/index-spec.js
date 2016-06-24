@@ -122,6 +122,59 @@ describe('Builder', () => {
           });
       });
     });
+
+    describe('\'--html\' and \'--sass\'', () => {
+      it('should return an error message indicating that is there no preview for SASS outputs', (done) => {
+        const options = config.getConfig({ html: true, sass: true });
+
+        builder.build(options)
+          .catch((error) => {
+            expect(error).toEqual(new Error('Is not possible to generate a HTML preview for SASS outputs'));
+            done();
+          });
+      });
+    });
+
+    describe('\'--sass\'', () => {
+      const options = config.getConfig({ sass: true });
+      const outPath = './build';
+      const scssRegex = new RegExp('\\w+.scss');
+      it('should generate a SCSS output instead of CSS', (done) => {
+        builder.build(options)
+          .then((result) => {
+            fs.readdir(`${outPath}`, (err, files) => {
+              expect(files).toBeDefined();
+              expect(files).toMatch(scssRegex);
+              expect(result).toBeSuccessful();
+              done();
+            });
+          });
+      });
+
+      it('should generate a _dcsIconFont.scss file', (done) => {
+        builder.build(options)
+          .then((result) => {
+            fs.readFile(`${outPath}/_dcsIconFont.scss`, 'utf8', (err, file) => {
+              expect(file).toBeDefined();
+              expect(result).toBeSuccessful();
+              done();
+            });
+          });
+      });
+
+      it('should generate sizing classes', (done) => {
+        builder.build(options)
+          .then((result) => {
+            fs.readFile(`${outPath}/_dcsIconFont.scss`, 'utf8', (err, file) => {
+              expect(file).toContain('sm');
+              expect(file).toContain('2x');
+              expect(file).toContain('5x');
+              expect(result).toBeSuccessful();
+              done();
+            });
+          });
+      });
+    });
   });
 });
 

@@ -1,0 +1,38 @@
+@font-face {
+	font-family: "{{fontName}}";
+	src: {{{src}}};
+}
+
+.{{baseClass}} {
+	line-height: normal;
+	font-size: 2em;
+}
+
+.{{baseClass}}:before {
+	font-family: {{fontName}} !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+{{#each codepoints}}
+.{{../classPrefix}}{{@key}}:before {
+	content: "\\{{this}}";
+}
+{{/each}}
+
+.{{baseClass}}.{{classPrefix}}sm {
+  font-size: 1em;
+}
+.{{baseClass}}.{{classPrefix}}1-5x {
+  font-size: 1.5em;
+}
+.{{baseClass}}.{{classPrefix}}2x {
+  font-size: 2em;
+}
+.{{baseClass}}.{{classPrefix}}3x {
+  font-size: 3em;
+}
+.{{baseClass}}.{{classPrefix}}4x {
+  font-size: 4em;
+}
