@@ -19,11 +19,11 @@ function getConfig(customOpts = {}) {
       baseClass: customOpts.baseclass || 'dcs-icon',
     },
     cssTemplate: './templates/css.hbs',
-    htmlTemplate: './templates/html.hbs',
+    htmlTemplate: `${__dirname}/../../templates/html.hbs`,
     templates: {
       css: './templates/css.hbs',
       scss: './templates/scss.hbs',
-      html: './templates/html.hbs',
+      html: `${__dirname}/../../templates/html.hbs`,
     },
     types: ['svg', 'ttf', 'woff', 'eot'],
     html: customOpts.html || false,
