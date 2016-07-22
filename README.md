@@ -62,12 +62,14 @@ These are all the flags that you can use with the *dcs-icon-font* generator:
 | --classprefix [string]  | Specifies the css class prefix for all your icons. Default *"dcs-icon-"*
 | --fontname [string]     | The name for your brand new font. Default *"dcsIconFont"*
 | --html                  | Because it would be nice to have a preview of all the generated fonts and CSS, you can pass this flag and have a html file with a html preview
-
+| --sass                  | You're a cool developer and you use Sass instead of CSS? Not a problem, just provide this flag and get a brand new **.scss** file
 
 ## Tests
 
 If you wish to run some tests accross this generator, you can do it by typing:
 
-``` 
+```
 npm run test
-``` 
+```
+
+## Screenshots
