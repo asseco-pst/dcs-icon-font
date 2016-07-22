@@ -3,4 +3,5 @@ app
 build
 out-test
 *icons*
+!icons-sample
 *-build
