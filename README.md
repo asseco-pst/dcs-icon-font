@@ -35,7 +35,7 @@ npm run build
 When installing from NPM globally, you can simply run:
 
 ```
-dcs-icon-font --icons my-svg-icons
+dcs-icon-font --icons my-svg-icons/*.svg
 ```
 
 (see the "src/config/wf-config.js") for more customization.
