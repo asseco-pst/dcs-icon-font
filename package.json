@@ -25,6 +25,7 @@
     "eslint": "2.8.0",
     "eslint-config-airbnb": "8.0.0",
     "eslint-plugin-import": "^1.6.1",
+    "handlebars": "^4.0.5",
     "jasmine": "^2.4.1",
     "watch": "^0.18.0"
   }
