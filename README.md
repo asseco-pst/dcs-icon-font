@@ -72,4 +72,6 @@ If you wish to run some tests accross this generator, you can do it by typing:
 npm run test
 ```
 
-## Screenshots
+## HTML preview sample
+![Capture](/uploads/1f414df9f260968727d03b757fb72587/Capture.PNG)
+![image](/uploads/f9a7ea3897b81057153c7c7517f0d0ba/image.png)
