@@ -1,7 +1,12 @@
 {
   "name": "dcs-icon-font",
-  "version": "1.0.0",
-  "description": "A font generator for generating both font and CSS for SVG files",
+  "version": "2.0.2",
+  "description": "A generator that enables you to generate fonts from a set of SVG icons.",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/Exictos-DCS/dcs-icon-font"
+  },
+  "keywords": ["webfont", "webfont generator", "SVG icon", "SVG icons", "icon font", "exictos", "exictos dcs", "web icons", "SVG font"],
   "bin": {
     "dcs-icon-font": "./app/index.js"
   },
