@@ -3,10 +3,11 @@
     <img src="http://i.imgur.com/MogAiUZ.png" width="100" alt="Exictos"/>
   </a>
 </p>
-<h1 align="center">
-  Exictos - Distribution Channel Solutions
-</h1>
+
+# Exictos - Distribution Channel Solutions
+
 ## dcs-icon-font
+
 A generator that enables you to generate fonts from a set of SVG icons.
 
 So you'll be able to use vectorial icons as a text font and manipulate them very easily.
@@ -54,7 +55,7 @@ Will produce the following in your web browser:
 These are all the flags that you can use with the *dcs-icon-font* generator:
 
 | Flag                    | Description
-| ----------------------- |:-------------
+| ----------------------- |-------------
 | --help                  | Presents all the available arguments that the dcs-icon-font cli is ready to handle
 | --out [string]          | Specifies where the generated code is stored into. Default *"./build"*
 | --icons [string]        | Specifies the directory that contains the SVG icons from which you want to generate the font. Default *"./icons/&#42;.svg"*
