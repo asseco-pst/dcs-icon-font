@@ -1,13 +1,13 @@
 <p align="center">
   <a href="http://www.exictos.com/">
-    <img src="/uploads/dbedbb2131dc8eb09b2a5bf6027e0ae9/symbol-exictos.png" width="100" alt="Exictos"/>
+    <img src="http://i.imgur.com/MogAiUZ.png" width="100" alt="Exictos"/>
   </a>
 </p>
 <h1 align="center">
   Exictos - Distribution Channel Solutions
 </h1>
 ## dcs-icon-font
-Is a font generator that enables you to generate fonts for SVG icons.
+A generator that enables you to generate fonts from a set of SVG icons.
 
 So you'll be able to use vectorial icons as a text font and manipulate them very easily.
 
@@ -24,7 +24,7 @@ npm install dcs-icon-font
 
 Or you can clone it and install all its dependencies:
 ```
-git clone git@172.25.1.187:canais-n-presenciais/dcs-icon-font.git
+git clone https://github.com/Exictos-DCS/dcs-icon-font.git
 cd dcs-icon-font
 npm install
 npm run build
@@ -38,7 +38,7 @@ When installing from NPM globally, you can simply run:
 dcs-icon-font --icons my-svg-icons/*.svg
 ```
 
-(see the "src/config/wf-config.js") for more customization.
+See the "API Reference" for more options.
 
 ## Code Example
 
@@ -47,7 +47,7 @@ dcs-icon-font --icons my-svg-icons/*.svg
 ```
 Will produce the following in your web browser:
 
-![dcs-icon-aeroplane4](/uploads/ff4a74f99614bdbc7042a52df25315eb/dcs-icon-aeroplane4.PNG)
+![dcs-icon-aeroplane4](http://i.imgur.com/GGuG9OP.png)
 
 ## API Reference
 
@@ -57,7 +57,7 @@ These are all the flags that you can use with the *dcs-icon-font* generator:
 | ----------------------- |:-------------
 | --help                  | Presents all the available arguments that the dcs-icon-font cli is ready to handle
 | --out [string]          | Specifies where the generated code is stored into. Default *"./build"*
-| --icons [string]        | Specifies the directory that contains the SVG icons from which you want to generate the font. Default *"./icons/*.svg"*
+| --icons [string]        | Specifies the directory that contains the SVG icons from which you want to generate the font. Default *"./icons/&#42;.svg"*
 | --baseclass [string]    | Specifies the base css class name. Default *"dcs-icon"*
 | --classprefix [string]  | Specifies the css class prefix for all your icons. Default *"dcs-icon-"*
 | --fontname [string]     | The name for your brand new font. Default *"dcsIconFont"*
@@ -73,5 +73,5 @@ npm run test
 ```
 
 ## HTML preview sample
-![Capture](/uploads/1f414df9f260968727d03b757fb72587/Capture.PNG)
-![image](/uploads/f9a7ea3897b81057153c7c7517f0d0ba/image.png)
+![Imgur](http://i.imgur.com/paG4Zgg.png)
+![Imgur](http://i.imgur.com/xLkwZa7.png)
