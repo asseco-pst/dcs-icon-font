@@ -4,3 +4,6 @@ build
 icons
 out-test
 *-build
+.eslintrc
+.babelrc
+spec
