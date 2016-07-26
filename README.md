@@ -39,7 +39,7 @@ When installing from NPM globally, you can simply run:
 dcs-icon-font --icons my-svg-icons/*.svg
 ```
 
-See the "API Reference" for more options.
+See the "Options List" for more options.
 
 ## Code Example
 
@@ -50,7 +50,7 @@ Will produce the following in your web browser:
 
 ![dcs-icon-aeroplane4](http://i.imgur.com/GGuG9OP.png)
 
-## API Reference
+## Options List
 
 These are all the flags that you can use with the *dcs-icon-font* generator:
 

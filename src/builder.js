@@ -58,16 +58,6 @@ function generateDcsIconFont(webfontsOptions) {
         reject(error);
       }
 
-      // const urls = {
-      //   eot: `${webfontsOptions.fontName}.eot`,
-      //   woff: `${webfontsOptions.fontName}.woff`,
-      //   ttf: `${webfontsOptions.fontName}.ttf`,
-      //   svg: `${webfontsOptions.fontName}.svg`,
-      // };
-      //
-      // console.log(result);
-      // // console.log(result.generateCss(urls));
-
       resolve({ success: true, result });
     });
   });
