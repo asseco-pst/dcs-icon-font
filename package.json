@@ -6,7 +6,7 @@
     "type" : "git",
     "url" : "https://github.com/Exictos-DCS/dcs-icon-font"
   },
-  "keywords": ["webfont", "webfont generator", "SVG icon", "SVG icons", "icon font", "exictos", "exictos dcs", "web icons", "SVG font"],
+  "keywords": ["webfont", "webfont generator", "SVG icon", "SVG icons", "icon font", "exictos", "exictos dcs", "web icons", "SVG font", "icon font generator", "icon font"],
   "bin": {
     "dcs-icon-font": "./app/index.js"
   },
