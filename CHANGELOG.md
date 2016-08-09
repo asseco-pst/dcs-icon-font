@@ -1,6 +1,6 @@
 ## [v2.1.0] 09-08-2016
 ### Adds
-* Search engine for a quick access to a specific icon in the HTML previewer
+* Search engine for quick access to a specific icon in the HTML previewer
 
 ### Fixes
 * Hardcoded content into the HTML previewer. Which wouldn't work properly for fonts with a different name from 'dcs-icon'
@@ -8,7 +8,7 @@
 
 ## [v2.0.0] 22-07-2016
 ### Adds
-* Bootstrap template for the icons preview
+* Bootstrap template for icons preview
 * Sass generator
 * Utility classes for icons sizing
 
