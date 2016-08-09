@@ -93,58 +93,61 @@
               <div class="row">
                 <div class="col-xs-12">
                   <p>Examples:</p>
-                  <ul>
-                    <li>
-                      <div class="table">
-                        <div class="cell icon-wrapper" style="width: 80px;">
-                          <i class="dcs-icon dcs-icon-delete dcs-icon-sm"></i>
-                        </div>
-                        <div class="cell">
-                          <code>.dcs-icon-sm</code>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="table">
-                        <div class="cell icon-wrapper" style="width: 80px;">
-                          <i class="dcs-icon dcs-icon-delete dcs-icon-1-5x"></i>
-                        </div>
-                        <div class="cell">
-                          <code>.dcs-icon-1-5x</code>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="table">
-                        <div class="cell icon-wrapper" style="width: 80px;">
-                          <i class="dcs-icon dcs-icon-delete dcs-icon-2x"></i>
-                        </div>
-                        <div class="cell">
-                          <code>.dcs-icon-2x</code>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="table">
-                        <div class="cell icon-wrapper" style="width: 80px;">
-                          <i class="dcs-icon dcs-icon-delete dcs-icon-3x"></i>
-                        </div>
-                        <div class="cell">
-                          <code>.dcs-icon-3x</code>
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="table">
-                        <div class="cell icon-wrapper" style="width: 80px;">
-                          <i class="dcs-icon dcs-icon-delete dcs-icon-4x"></i>
-                        </div>
-                        <div class="cell">
-                          <code>.dcs-icon-4x</code>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
+                  {{#with names.[0]}}
+
+                      <ul>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}sm"></i>
+                            </div>
+                            <div class="cell">
+                              <code>{{ ../classPrefix }}sm</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}1-5x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}1-5x</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}2x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}2x</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}3x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}3x</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}4x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}4x</code>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                  {{/with}}
                 </div>
               </div>
             </div>
