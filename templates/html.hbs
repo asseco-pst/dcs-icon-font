@@ -15,7 +15,9 @@
     div.table {
       display: table;
       width: 100%;
+      margin-bottom: 0px;
     }
+
     div.table .cell {
       display: table-cell;;
       vertical-align: middle;
@@ -30,6 +32,10 @@
       list-style: none;
     }
 
+    .icon-preview-wrapper {
+      margin-bottom: 20px;
+    }
+
     .icon-wrapper {
       text-align: center;
     }
@@ -42,7 +48,14 @@
     <div class="row">
       <div class="col-sm-12">
         <div class="panel panel-primary">
-          <div class="panel-heading">{{fontName}}</div>
+          <div class="panel-heading">
+            <div class="table">
+              <div class="cell">{{ fontName }}</div>
+              <div class="cell">
+                <input type="text" class="form-control" id="search-box" placeholder="Search icon">
+              </div>
+            </div>
+          </div>
           <div class="panel-body">
             <label>
               <i class="dcs-icon dcs-icon-edit"></i> CSS Control
@@ -50,20 +63,18 @@
             <p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>
             <br>
             <div class="row">
-              <form class="form-inline">
-                {{#each names}}
-                <div class="col-xs-12 col-sm-4 col-md-3">
-                  <div class="table">
-                    <div class="cell" style="width: 80px;">
-                      <i class="{{../baseClass}} {{../classPrefix}}{{this}}"></i>
-                    </div>
-                    <div class="cell">
-                      <code>{{this}}</code>
-                    </div>
+              {{#each names}}
+              <div class="col-xs-12 col-sm-4 col-md-3 icon-preview-wrapper">
+                <div class="table">
+                  <div class="cell" style="width: 80px;">
+                    <i class="{{../baseClass}} {{../classPrefix}}{{this}}"></i>
+                  </div>
+                  <div class="cell">
+                    <code>{{this}}</code>
                   </div>
                 </div>
-                {{/each}}
-              </form>
+              </div>
+              {{/each}}
             </div>
           </div>
         </div>
@@ -142,5 +153,23 @@
       </div>
     </div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('#search-box').on('keyup', function(){
+        $('.icon-preview-wrapper').show();
+
+        if ($(this).val().length) {
+          var reg = new RegExp('w*' + $(this).val() + 'w*');
+          $('.dcs-icon')
+            .filter(function() {
+              if (!this.classList.value.match(reg)) {
+                $(this).closest('.icon-preview-wrapper').hide();
+              }
+            });
+        };
+      });
+    });
+  </script>
 </body>
 </html>
