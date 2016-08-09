@@ -21,6 +21,24 @@ These are all the available arguments:
     `);
   }
 
+  return setWebFontOptions(config)
+    .then((options) =>
+      generateDcsIconFont(options)
+    )
+    .then(() =>
+      Promise.resolve({ success: true })
+    )
+    .catch((e) => {
+      throw e;
+    });
+}
+
+/**
+ * Responsible for evaluating the provided arguments (config) and, if valid,
+ * set up the options for the webfont generator
+ * @param {Object} config the configurations provided by the user through CLI arguments
+ */
+function setWebFontOptions(config) {
   return new Promise((resolve, reject) => {
     try {
       const iconsPath = config.customOpts.icons || 'icons/*.svg';
@@ -41,11 +59,6 @@ These are all the available arguments:
     } catch (e) {
       reject(e);
     }
-  })
-  .then((options) => generateDcsIconFont(options))
-  .then((resolve) => resolve({ success: true }))
-  .catch((e) => {
-    throw e;
   });
 }
 
