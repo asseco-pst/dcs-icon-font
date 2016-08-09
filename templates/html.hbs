@@ -58,7 +58,9 @@
           </div>
           <div class="panel-body">
             <label>
-              <i class="dcs-icon dcs-icon-edit"></i> CSS Control
+              {{#with names.[0]}}
+                <i class="{{../baseClass}} {{../classPrefix}}{{ this }}"></i> CSS Control
+              {{/with}}
             </label>
             <p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>
             <br>
@@ -94,7 +96,6 @@
                 <div class="col-xs-12">
                   <p>Examples:</p>
                   {{#with names.[0]}}
-
                       <ul>
                         <li>
                           <div class="table">
@@ -164,7 +165,7 @@
 
         if ($(this).val().length) {
           var reg = new RegExp('w*' + $(this).val() + 'w*');
-          $('.dcs-icon')
+          $('.{{ baseClass }}')
             .filter(function() {
               if (!this.classList.value.match(reg)) {
                 $(this).closest('.icon-preview-wrapper').hide();
