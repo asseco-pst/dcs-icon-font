@@ -1,3 +1,7 @@
+## [v2.1.1] 02-09-2016
+### Fixes
+* Missing documentation for *cssFontsUrl* and *cssDest* CLI args. (Issue Exictos-DCS/dcs-icon-font#2)
+
 ## [v2.1.0] 09-08-2016
 ### Adds
 * Search engine for quick access to a specific icon in the HTML previewer
