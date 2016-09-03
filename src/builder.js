@@ -14,10 +14,13 @@ function build(config = {}) {
 These are all the available arguments:
 --out [String]: specifies where the generated code is stored into. Default "./build"
 --icons [String]: specifies the directory that contains the SVG icons for which you want to generate the font. Default "./icons"
---baseclass [String]: specifies the base css class name. Default "dcs-icon"
---classprefix [String]: specifies the css class prefix for all your icons. Default "dcs-icon-"
 --fontname [String]: the name for your brand new font. Default "dcsIconFont"
+--baseclass [String]: specifies the base css class name. Default "dcs-icon"
+--cssFontsUrl [String]: the font URL to be defined into the resulting CSS file. Default: the --fontname specified
+--cssDest [String]: the destination path for the resulting CSS file. Default: The --out specified
+--classprefix [String]: specifies the css class prefix for all your icons. Default "dcs-icon-"
 --html: enables the generation of a html file with a preview for all the icons in the generated font
+--sass: generates a SCSS file instead of a CSS file
     `);
   }
 
