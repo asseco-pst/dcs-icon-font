@@ -137,6 +137,53 @@ describe('Builder', () => {
       });
     });
 
+    describe('Providing custom templates', () => {
+      describe('\'--htmlTemplate\'', () => {
+        it('should generate the html preview based in the provided template', (done) => {
+          const options = config.getConfig({ html: true, htmlTemplate: 'spec/templates/html.hbs' });
+          builder.build(options)
+            .then((result) => {
+              fs.readFile('./build/dcsIconFont-preview.html', 'utf8', (err, file) => {
+                expect(file).toBeDefined();
+                expect(result).toBeSuccessful();
+                expect(file).toContain('TEMPLATE generated from the UNIT TESTS');
+                done();
+              });
+            });
+        });
+      });
+
+      describe('\'--cssTemplate\'', () => {
+        it('should generate the CSS based in the provided template', (done) => {
+          const options = config.getConfig({ html: true, cssTemplate: 'spec/templates/css.hbs' });
+          builder.build(options)
+            .then((result) => {
+              fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
+                expect(file).toBeDefined();
+                expect(result).toBeSuccessful();
+                expect(file).toContain('CSS generated from the UNIT TESTS template');
+                done();
+              });
+            });
+        });
+      });
+
+      describe('\'--cssTemplate\'', () => {
+        it('should generate the SCSS based in the provided template', (done) => {
+          const options = config.getConfig({ sass: true, scssTemplate: 'spec/templates/scss.hbs' });
+          builder.build(options)
+            .then((result) => {
+              fs.readFile('./build/_dcsIconFont.scss', 'utf8', (err, file) => {
+                expect(file).toBeDefined();
+                expect(result).toBeSuccessful();
+                expect(file).toContain('SCSS generated from the UNIT TESTS template');
+                done();
+              });
+            });
+        });
+      });
+    });
+
     describe('\'--html\' and \'--sass\'', () => {
       it('should return an error message indicating that is there no preview for SASS outputs', (done) => {
         const options = config.getConfig({ html: true, sass: true });

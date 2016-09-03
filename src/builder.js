@@ -21,6 +21,9 @@ These are all the available arguments:
 --classprefix [String]: specifies the css class prefix for all your icons. Default "dcs-icon-"
 --html: enables the generation of a html file with a preview for all the icons in the generated font
 --sass: generates a SCSS file instead of a CSS file
+--htmlTemplate: for providing a custom HTML template
+--cssTemplate: for providing a custom CSS template
+--scssTemplate: for providing a custom SCSS template
     `);
   }
 

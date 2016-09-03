@@ -18,23 +18,17 @@ function getConfig(customOpts = {}) {
       classPrefix: customOpts.classprefix || 'dcs-icon-',
       baseClass: customOpts.baseclass || 'dcs-icon',
     },
-    cssTemplate: './templates/css.hbs',
-    htmlTemplate: `${__dirname}/../../templates/html.hbs`,
-    // templates: {
-    //   css: './templates/css.hbs',
-    //   scss: './templates/scss.hbs',
-    //   html: `${__dirname}/../../templates/html.hbs`,
-    // },
+    htmlTemplate: customOpts.htmlTemplate || `${__dirname}/../../templates/html.hbs`,
     types: ['svg', 'ttf', 'woff', 'eot'],
     html: customOpts.html || false,
     htmlDest: customOpts.htmlDest ? `${customOpts.htmlDest}/${fontName}-preview.html` : `${cssDest}/${fontName}-preview.html`,
   };
 
   if (customOpts.sass) {
-    webfontsOptions.cssTemplate = `${__dirname}/../../templates/scss.hbs`;
+    webfontsOptions.cssTemplate = customOpts.scssTemplate ? customOpts.scssTemplate : `${__dirname}/../../templates/scss.hbs`;
     webfontsOptions.cssDest = `${cssDest}/_${fontName}.scss`;
   } else {
-    webfontsOptions.cssTemplate = `${__dirname}/../../templates/css.hbs`;
+    webfontsOptions.cssTemplate = customOpts.cssTemplate ? customOpts.cssTemplate : `${__dirname}/../../templates/css.hbs`;
   }
 
   return {

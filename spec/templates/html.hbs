@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{fontName}}</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style>
+		body {
+			font-family: sans-serif;
+			margin: 0;
+			padding: 10px 20px;
+      font-size: 16px;
+		}
+
+    div.table {
+      display: table;
+      width: 100%;
+      margin-bottom: 0px;
+    }
+
+    div.table .cell {
+      display: table-cell;;
+      vertical-align: middle;
+    }
+
+    ul, ul li {
+      padding: 5px;
+      margin: 0px;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    .icon-preview-wrapper {
+      margin-bottom: 20px;
+    }
+
+    .icon-wrapper {
+      text-align: center;
+    }
+
+		{{{styles}}}
+	</style>
+</head>
+<body>
+  <h1>TEMPLATE generated from the UNIT TESTS</h1>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <div class="table">
+              <div class="cell">{{ fontName }}</div>
+              <div class="cell">
+                <input type="text" class="form-control" id="search-box" placeholder="Search icon">
+              </div>
+            </div>
+          </div>
+          <div class="panel-body">
+            <label>
+              {{#with names.[0]}}
+                <i class="{{../baseClass}} {{../classPrefix}}{{ this }}"></i> CSS Control
+              {{/with}}
+            </label>
+            <p>Easily style icon color, size, shadow, and anything that's possible with CSS.</p>
+            <br>
+            <div class="row">
+              {{#each names}}
+              <div class="col-xs-12 col-sm-4 col-md-3 icon-preview-wrapper">
+                <div class="table">
+                  <div class="cell" style="width: 80px;">
+                    <i class="{{../baseClass}} {{../classPrefix}}{{this}}"></i>
+                  </div>
+                  <div class="cell">
+                    <code>{{this}}</code>
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-info">
+          <div class="panel-heading">Sizing classes</div>
+          <div class="panel-body">
+            <p>
+              DCS Icon Font provides some classes for different icon sizes.
+              For that, you only need to apply the following classes in your icons.
+            </p>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-12">
+                  <p>Examples:</p>
+                  {{#with names.[0]}}
+                      <ul>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}sm"></i>
+                            </div>
+                            <div class="cell">
+                              <code>{{ ../classPrefix }}sm</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}1-5x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}1-5x</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}2x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}2x</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}3x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}3x</code>
+                            </div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="table">
+                            <div class="cell icon-wrapper" style="width: 80px;">
+                              <i class="{{ ../baseClass }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}4x"></i>
+                            </div>
+                            <div class="cell">
+                              <code>.{{ ../classPrefix }}4x</code>
+                            </div>
+                          </div>
+                        </li>
+                      </ul>
+                  {{/with}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+  <script type="text/javascript">
+    $(function(){
+      $('#search-box').on('keyup', function(){
+        $('.icon-preview-wrapper').show();
+
+        if ($(this).val().length) {
+          var reg = new RegExp('w*' + $(this).val() + 'w*');
+          $('.{{ baseClass }}')
+            .filter(function() {
+              if (!this.classList.value.match(reg)) {
+                $(this).closest('.icon-preview-wrapper').hide();
+              }
+            });
+        };
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 ## [v2.1.2] 03-09-2016
 ### Adds
 * New CLI arg to specify the html path
+* New CLI arg to enable the specification of a custom CSS, SCSS or HTML template.
 
 ### Changes
 * HTML preview file name. Now, instead of "preview", it is named as "[fontname]-preview.html"
