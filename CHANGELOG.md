@@ -1,3 +1,13 @@
+## [v2.1.2] 03-09-2016
+### Adds
+* New CLI arg to specify the html path
+
+### Changes
+* HTML preview file name. Now, instead of "preview", it is named as "[fontname]-preview.html"
+
+### Fixes
+* Missing flags in the *--help* section (--cssFontsUrl, --cssDest and --sass)
+
 ## [v2.1.0] 09-08-2016
 ### Adds
 * Search engine for quick access to a specific icon in the HTML previewer

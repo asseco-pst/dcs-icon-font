@@ -20,14 +20,14 @@ function getConfig(customOpts = {}) {
     },
     cssTemplate: './templates/css.hbs',
     htmlTemplate: `${__dirname}/../../templates/html.hbs`,
-    templates: {
-      css: './templates/css.hbs',
-      scss: './templates/scss.hbs',
-      html: `${__dirname}/../../templates/html.hbs`,
-    },
+    // templates: {
+    //   css: './templates/css.hbs',
+    //   scss: './templates/scss.hbs',
+    //   html: `${__dirname}/../../templates/html.hbs`,
+    // },
     types: ['svg', 'ttf', 'woff', 'eot'],
     html: customOpts.html || false,
-    htmlDest: `${cssDest}/preview.html`,
+    htmlDest: customOpts.htmlDest ? `${customOpts.htmlDest}/${fontName}-preview.html` : `${cssDest}/${fontName}-preview.html`,
   };
 
   if (customOpts.sass) {
