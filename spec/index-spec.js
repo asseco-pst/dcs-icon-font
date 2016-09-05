@@ -110,16 +110,77 @@ describe('Builder', () => {
     });
 
     describe('\'--html\'', () => {
-      it('should generate a html file named \'preview.html\' with a preview for all the icons into the generated font', (done) => {
+      it('should generate a html file named \'dcsIconFont-preview.html\' with a preview for all the icons into the generated font', (done) => {
         const options = config.getConfig({ html: true });
         builder.build(options)
           .then((result) => {
-            fs.readFile('./build/preview.html', 'utf8', (err, file) => {
+            fs.readFile('./build/dcsIconFont-preview.html', 'utf8', (err, file) => {
               expect(file).toBeDefined();
               expect(result).toBeSuccessful();
               done();
             });
           });
+      });
+    });
+
+    describe('\'--htmlDest\'', () => {
+      it('should generate the html preview with in the path \'build/sample/sample-preview.html\'', (done) => {
+        const options = config.getConfig({ html: true, htmlDest: 'build/sample', fontname: 'sample' });
+        builder.build(options)
+          .then((result) => {
+            fs.readFile('./build/sample/sample-preview.html', 'utf8', (err, file) => {
+              expect(file).toBeDefined();
+              expect(result).toBeSuccessful();
+              done();
+            });
+          });
+      });
+    });
+
+    describe('Providing custom templates', () => {
+      describe('\'--htmlTemplate\'', () => {
+        it('should generate the html preview based in the provided template', (done) => {
+          const options = config.getConfig({ html: true, htmlTemplate: 'spec/templates/html.hbs' });
+          builder.build(options)
+            .then((result) => {
+              fs.readFile('./build/dcsIconFont-preview.html', 'utf8', (err, file) => {
+                expect(file).toBeDefined();
+                expect(result).toBeSuccessful();
+                expect(file).toContain('TEMPLATE generated from the UNIT TESTS');
+                done();
+              });
+            });
+        });
+      });
+
+      describe('\'--cssTemplate\'', () => {
+        it('should generate the CSS based in the provided template', (done) => {
+          const options = config.getConfig({ html: true, cssTemplate: 'spec/templates/css.hbs' });
+          builder.build(options)
+            .then((result) => {
+              fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
+                expect(file).toBeDefined();
+                expect(result).toBeSuccessful();
+                expect(file).toContain('CSS generated from the UNIT TESTS template');
+                done();
+              });
+            });
+        });
+      });
+
+      describe('\'--cssTemplate\'', () => {
+        it('should generate the SCSS based in the provided template', (done) => {
+          const options = config.getConfig({ sass: true, scssTemplate: 'spec/templates/scss.hbs' });
+          builder.build(options)
+            .then((result) => {
+              fs.readFile('./build/_dcsIconFont.scss', 'utf8', (err, file) => {
+                expect(file).toBeDefined();
+                expect(result).toBeSuccessful();
+                expect(file).toContain('SCSS generated from the UNIT TESTS template');
+                done();
+              });
+            });
+        });
       });
     });
 
