@@ -1,6 +1,17 @@
+## [v2.2.0] 03-09-2016
+### Adds
+* New CLI arg to specify the html path
+* New CLI arg to enable the specification of a custom CSS, SCSS or HTML template.
+
+### Changes
+* HTML preview file name. Now, instead of "preview", it is named as "[fontname]-preview.html"
+
+### Fixes
+* Missing flags in the *--help* section (--cssFontsUrl, --cssDest and --sass)
+
 ## [v2.1.1] 02-09-2016
 ### Fixes
-* Missing documentation for *cssFontsUrl* and *cssDest* CLI args. (Issue [#2](https://github.com/Exictos-DCS/dcs-icon-font/issues/2))
+* Missing documentation for *cssFontsUrl* and *cssDest* CLI args. (Issue Exictos-DCS/dcs-icon-font#2)
 
 ## [v2.1.0] 09-08-2016
 ### Adds
@@ -34,3 +45,4 @@
 [v2.0.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.0.0
 [v2.1.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.1.0
 [v2.1.1]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.1.1
+[v2.2.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.2.0

@@ -1,0 +1,42 @@
+$line-height: normal;
+$font-height: 1em;
+
+@font-face {
+	font-family: "{{fontName}}";
+	src: {{{src}}};
+}
+
+// SCSS generated from the UNIT TESTS template
+
+.{{baseClass}} {
+	line-height: $line-height;
+	font-size: $font-height;
+
+  &::before {
+  	font-family: {{fontName}} !important;
+  	font-style: normal;
+  	font-weight: normal !important;
+  	vertical-align: top;
+  }
+
+  $icon-sizes: (
+    "sm": 1em,
+    "1-5x": 1.5em,
+    "2x": 2em,
+    "3x": 3em,
+    "4x": 4em,
+  );
+
+  @each $key, $size in $icon-sizes {
+    &.{{baseClass}}-#{$key} {
+      font-size: $size;
+    }
+  }
+
+  {{#each codepoints}}
+  &.{{../classPrefix}}{{@key}}::before {
+  	content: "\\{{this}}";
+  }
+
+  {{/each}}
+}
