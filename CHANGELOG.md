@@ -1,4 +1,4 @@
-## [v2.1.2] 03-09-2016
+## [v2.2.0] 03-09-2016
 ### Adds
 * New CLI arg to specify the html path
 * New CLI arg to enable the specification of a custom CSS, SCSS or HTML template.
@@ -44,3 +44,5 @@
 [v1.0.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v1.0.0
 [v2.0.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.0.0
 [v2.1.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.1.0
+[v2.1.1]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.1.1
+[v2.2.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.2.0
