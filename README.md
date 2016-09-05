@@ -66,6 +66,9 @@ These are all the flags that you can use with the *dcs-icon-font* generator:
 | --classprefix [string]  | Specifies the CSS class prefix for all your icons. Default *"dcs-icon-"*
 | --html                  | Because it would be nice to have a preview of all the generated fonts and CSS, you can pass this flag and have a html file with a html preview
 | --sass                  | You're a cool developer and you use Sass instead of CSS? Not a problem, just provide this flag and get a brand new **.scss** file
+| --htmlTemplate          | Hmmm.. Need to provide a different HTML for the font preview? Specify your own HTML template
+| --cssTemplate           | The CSS generated is not enough for what you need? Specify your custom CSS template
+| --scssTemplate          | Specify your Sass template to meet all your needs
 
 ## Tests
 
