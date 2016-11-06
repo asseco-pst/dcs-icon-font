@@ -3,3 +3,4 @@ app
 build
 out-test
 *-build
+.vscode
