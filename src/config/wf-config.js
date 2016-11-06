@@ -31,6 +31,22 @@ function getConfig(customOpts = {}) {
     webfontsOptions.cssTemplate = customOpts.cssTemplate ? customOpts.cssTemplate : `${__dirname}/../../templates/css.hbs`;
   }
 
+  if (customOpts.fixedWidth) {
+    webfontsOptions.fixedWidth = (customOpts.fixedWidth === 'true'); 
+  }
+  
+  if (customOpts.centerHorizontally) {
+    webfontsOptions.centerHorizontally = (customOpts.centerHorizontally === 'true'); 
+  }
+  
+  if (customOpts.normalize) {
+    webfontsOptions.normalize = (customOpts.normalize === 'true'); 
+  }
+  
+  if (customOpts.fontHeight) {
+    webfontsOptions.fontHeight = Number(customOpts.fontHeight); 
+  }
+
   return {
     customOpts,
     webfontsOptions,

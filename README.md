@@ -54,21 +54,25 @@ Will produce the following in your web browser:
 
 These are all the flags that you can use with the *dcs-icon-font* generator:
 
-| Flag                    | Description
-| ----------------------- |-------------
-| --help                  | Presents all the available arguments that the dcs-icon-font cli is ready to handle
-| --out [string]          | Specifies where the generated code is stored into. Default *"./build"*
-| --icons [string]        | Specifies the directory that contains the SVG icons from which you want to generate the font. Default *"./icons/&#42;.svg"*
-| --fontname [string]     | The name for your brand new font. Default *"dcsIconFont"*
-| --baseclass [string]    | Specifies the base CSS class name. Default *"dcs-icon"*
-| --cssFontsUrl [string]  | Specifies the *font URL* to be defined into the resulting *CSS* file. Default: the *--fontname* specified
-| --cssDest [string]      | Specifies destination path for the resulting *CSS* file. Default: The *--out* specified
-| --classprefix [string]  | Specifies the CSS class prefix for all your icons. Default *"dcs-icon-"*
-| --html                  | Because it would be nice to have a preview of all the generated fonts and CSS, you can pass this flag and have a html file with a html preview
-| --sass                  | You're a cool developer and you use Sass instead of CSS? Not a problem, just provide this flag and get a brand new **.scss** file
-| --htmlTemplate          | Hmmm.. Need to provide a different HTML for the font preview? Specify your own HTML template
-| --cssTemplate           | The CSS generated is not enough for what you need? Specify your custom CSS template
-| --scssTemplate          | Specify your Sass template to meet all your needs
+| Flag                        | Description
+| -----------------------     |-------------
+| --help                      | Presents all the available arguments that the dcs-icon-font cli is ready to handle
+| --out [string]              | Specifies where the generated code is stored into. Default *"./build"*
+| --icons [string]            | Specifies the directory that contains the SVG icons from which you want to generate the font. Default *"./icons/&#42;.svg"*
+| --fontname [string]         | The name for your brand new font. Default *"dcsIconFont"*
+| --baseclass [string]        | Specifies the base CSS class name. Default *"dcs-icon"*
+| --cssFontsUrl [string]      | Specifies the *font URL* to be defined into the resulting *CSS* file. Default: the *--fontname* specified
+| --cssDest [string]          | Specifies destination path for the resulting *CSS* file. Default: The *--out* specified
+| --classprefix [string]      | Specifies the CSS class prefix for all your icons. Default *"dcs-icon-"*
+| --html                      | Because it would be nice to have a preview of all the generated fonts and CSS, you can pass this flag and have a html file with a html preview
+| --sass                      | You're a cool developer and you use Sass instead of CSS? Not a problem, just provide this flag and get a brand new **.scss** file
+| --htmlTemplate [string]     | Hmmm.. Need to provide a different HTML for the font preview? Specify your own HTML template
+| --cssTemplate [string]      | The CSS generated is not enough for what you need? Specify your custom CSS template
+| --scssTemplate [string]     | Specify your Sass template to meet all your needs
+| --fixedWidth [bool]         | Option passed directly to [svgicons2svgfont]
+| --centerHorizontally [bool] | Option passed directly to [svgicons2svgfont]
+| --normalize [bool]          | Option passed directly to [svgicons2svgfont]
+| --fontHeight [Number]       | Option passed directly to [svgicons2svgfont]
 
 ## Tests
 
@@ -81,3 +85,5 @@ npm run test
 ## HTML preview sample
 ![Imgur](http://i.imgur.com/paG4Zgg.png)
 ![Imgur](http://i.imgur.com/xLkwZa7.png)
+
+[svgicons2svgfont]: https://github.com/nfroidure/svgicons2svgfont

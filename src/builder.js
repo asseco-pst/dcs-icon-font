@@ -60,7 +60,7 @@ function setWebFontOptions(config) {
 
       const options = Object.assign({}, config.webfontsOptions);
       options.files = files;
-
+      
       resolve(options);
     } catch (e) {
       reject(e);

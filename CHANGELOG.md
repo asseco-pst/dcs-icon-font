@@ -1,3 +1,8 @@
+## [v2.2.1] 07-11-2016
+### Adds
+* New CLI args to pass args directly to [svgicons2svgfont].
+* New CLI arg to enable the specification of a custom CSS, SCSS or HTML template.
+
 ## [v2.2.0] 03-09-2016
 ### Adds
 * New CLI arg to specify the html path
@@ -46,3 +51,4 @@
 [v2.1.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.1.0
 [v2.1.1]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.1.1
 [v2.2.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.2.0
+[svgicons2svgfont]: https://github.com/nfroidure/svgicons2svgfont
