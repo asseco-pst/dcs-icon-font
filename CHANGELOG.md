@@ -1,7 +1,10 @@
-## [v2.2.1] 07-11-2016
+## [v2.2.1] 06-11-2016
 ### Adds
 * New CLI args to pass args directly to [svgicons2svgfont].
-* New CLI arg to enable the specification of a custom CSS, SCSS or HTML template.
+ * fixedWidth - Boolean
+ * centerHorizontally - Boolean
+ * normalize - Boolean
+ * fontHeight - Number
 
 ## [v2.2.0] 03-09-2016
 ### Adds
