@@ -1,3 +1,7 @@
+## [v2.2.2] 03-02-2017
+### Changes 
+* Error message when no valid file list is provided
+
 ## [v2.2.1] 06-11-2016
 ### Adds
 * New CLI args to pass args directly to [svgicons2svgfont].
