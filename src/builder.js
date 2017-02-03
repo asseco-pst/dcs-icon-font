@@ -51,7 +51,7 @@ function setWebFontOptions(config) {
       const files = glob.sync(iconsPath);
 
       if (!files.length) {
-        reject(new Error('Invalid file list'));
+        reject(new Error(`"${iconsPath}" does not match any SVG file. It must be something similar to "your-path/*.svg"`));
       }
 
       if (config.customOpts.sass && config.customOpts.html) {

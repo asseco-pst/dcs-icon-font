@@ -26,11 +26,12 @@ describe('Builder', () => {
 
     describe('\'--icons\'', () => {
       it('should validate if it is not an empty file list', (done) => {
-        const options = config.getConfig({ icons: './none' });
+        const icons = './none';
+        const options = config.getConfig({ icons });
 
         builder.build(options)
           .catch((error) => {
-            expect(error).toEqual(new Error('Invalid file list'));
+            expect(error).toEqual(new Error(`"${icons}" does not match any SVG file. It must be something similar to "your-path/*.svg"`));
             done();
           });
       });
