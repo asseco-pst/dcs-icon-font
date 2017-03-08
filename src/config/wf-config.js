@@ -16,7 +16,7 @@ function getConfig(customOpts = {}) {
     fontName,
     templateOptions: {
       classPrefix: customOpts.classprefix || 'dcs-icon-',
-      baseClass: customOpts.baseclass || 'dcs-icon',
+      baseSelector: customOpts.baseSelector || 'dcs-icon',
     },
     htmlTemplate: customOpts.htmlTemplate || `${__dirname}/../../templates/html.hbs`,
     types: ['svg', 'ttf', 'woff', 'eot'],

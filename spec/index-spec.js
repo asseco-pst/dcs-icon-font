@@ -49,14 +49,15 @@ describe('Builder', () => {
       });
     });
 
-    describe('\'--baseclass\'', () => {
-      it('should generate the CSS declaring the style for the \'baseclass\' provided', (done) => {
-        const baseClass = 'test-icon';
-        const options = config.getConfig({ baseclass: baseClass });
+    describe('\'--baseSelector\'', () => {
+      it('should generate the CSS declaring the style for the \'baseSelector\' provided', (done) => {
+        const baseSelector = '.test-icon';
+        const options = config.getConfig({ baseSelector });
+
         builder.build(options)
           .then((result) => {
             fs.readFile('./build/dcsIconFont.css', 'utf8', (err, file) => {
-              expect(file).toContain(baseClass);
+              expect(file).toContain(baseSelector);
               expect(result).toBeSuccessful();
               done();
             });

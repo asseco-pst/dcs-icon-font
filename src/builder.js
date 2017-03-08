@@ -15,7 +15,7 @@ These are all the available arguments:
 --out [String]: specifies where the generated code is stored into. Default "./build"
 --icons [String]: specifies the directory that contains the SVG icons for which you want to generate the font. Default "./icons"
 --fontname [String]: the name for your brand new font. Default "dcsIconFont"
---baseclass [String]: specifies the base css class name. Default "dcs-icon"
+--baseSelector [String]: specifies the base css class name. Default "dcs-icon"
 --cssFontsUrl [String]: the font URL to be defined into the resulting CSS file. Default: the --fontname specified
 --cssDest [String]: the destination path for the resulting CSS file. Default: The --out specified
 --classprefix [String]: specifies the css class prefix for all your icons. Default "dcs-icon-"

@@ -8,7 +8,7 @@ $font-height: 1em;
 
 // SCSS generated from the UNIT TESTS template
 
-.{{baseClass}} {
+.{{baseSelector}} {
 	line-height: $line-height;
 	font-size: $font-height;
 
@@ -28,7 +28,7 @@ $font-height: 1em;
   );
 
   @each $key, $size in $icon-sizes {
-    &.{{baseClass}}-#{$key} {
+    &.{{baseSelector}}-#{$key} {
       font-size: $size;
     }
   }
