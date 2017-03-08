@@ -4,6 +4,7 @@
  * Adds woff2 support
  * Update dependencies
  * Deprecate baseClass in favor of a more powerful baseSelector
+* Deprecate --baseclass CLI arg, use --baseSelector instead
 
 ## [v2.2.2] 03-02-2017
 ### Changes 
@@ -66,4 +67,6 @@
 [v2.1.1]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.1.1
 [v2.2.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.2.0
 [v2.2.1]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.2.1
+[v2.2.2]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v2.2.2
+[v3.0.0]: https://github.com/Exictos-DCS/dcs-icon-font/releases/tag/v3.0.0
 [svgicons2svgfont]: https://github.com/nfroidure/svgicons2svgfont
