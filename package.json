@@ -1,6 +1,6 @@
 {
   "name": "dcs-icon-font",
-  "version": "2.2.2",
+  "version": "3.0.0",
   "description": "A generator that enables you to generate fonts from a set of SVG icons.",
   "repository": {
     "type": "git",

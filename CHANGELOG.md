@@ -1,3 +1,10 @@
+## [v3.0.0] 08-03-2017
+### Changes 
+* Support webfonts-generator@0.4.0
+ * Adds woff2 support
+ * Update dependencies
+ * Deprecate baseClass in favor of a more powerful baseSelector
+
 ## [v2.2.2] 03-02-2017
 ### Changes 
 * Error message when no valid file list is provided
