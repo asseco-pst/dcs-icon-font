@@ -103,7 +103,7 @@
                               <i class="{{ ../baseSelector }} {{ ../classPrefix }}{{ this }} {{ ../classPrefix }}sm"></i>
                             </div>
                             <div class="cell">
-                              <code>{{ ../classPrefix }}sm</code>
+                              <code>.{{ ../classPrefix }}sm</code>
                             </div>
                           </div>
                         </li>
@@ -164,7 +164,7 @@
         $('.icon-preview-wrapper').show();
 
         if ($(this).val().length) {
-          var reg = new RegExp('w*' + $(this).val() + 'w*');
+          var reg = new RegExp('w*' + $(this).val() + 'w*', '\i');
           $('.{{ baseSelector }}')
             .filter(function() {
               if (!this.classList.value.match(reg)) {
