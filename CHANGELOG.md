@@ -1,3 +1,8 @@
+## [v3.0.1] 08-03-2017
+### Fixes
+* Add missing "." (dot) on hbs template for small icon on the HTML preview
+* Make search engine case insensitive
+
 ## [v3.0.0] 08-03-2017
 ### Changes 
 * Support webfonts-generator@0.4.0
