@@ -32,19 +32,23 @@ function getConfig(customOpts = {}) {
   }
 
   if (customOpts.fixedWidth) {
-    webfontsOptions.fixedWidth = (customOpts.fixedWidth === 'true'); 
+    webfontsOptions.fixedWidth = (customOpts.fixedWidth === 'true');
   }
-  
+
   if (customOpts.centerHorizontally) {
-    webfontsOptions.centerHorizontally = (customOpts.centerHorizontally === 'true'); 
+    webfontsOptions.centerHorizontally = (customOpts.centerHorizontally === 'true');
   }
-  
+
   if (customOpts.normalize) {
-    webfontsOptions.normalize = (customOpts.normalize === 'true'); 
+    webfontsOptions.normalize = (customOpts.normalize === 'true');
+  }
+
+  if (customOpts.fontHeight) {
+    webfontsOptions.fontHeight = Number(customOpts.fontHeight);
   }
   
-  if (customOpts.fontHeight) {
-    webfontsOptions.fontHeight = Number(customOpts.fontHeight); 
+  if (customOpts.descent) {
+    webfontsOptions.descent = Number(customOpts.descent);
   }
 
   return {

@@ -73,6 +73,7 @@ These are all the flags that you can use with the *dcs-icon-font* generator:
 | --centerHorizontally [bool] | Option passed directly to [svgicons2svgfont]
 | --normalize [bool]          | Option passed directly to [svgicons2svgfont]
 | --fontHeight [Number]       | Option passed directly to [svgicons2svgfont]
+| --descent [Number]          | Option passed directly to [svgicons2svgfont]
 
 ## Tests
 
